@@ -1,0 +1,1163 @@
+/* ===============================
+   OUR FOREVER TRIO
+   PREMIUM FRIENDSHIP DAY WEBSITE
+================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#ff4d94;
+--secondary:#6c63ff;
+--dark:#050816;
+--dark2:#10162f;
+--white:#ffffff;
+--glass:rgba(255,255,255,.08);
+}
+
+body{
+
+background:linear-gradient(180deg,#050816,#091122,#131d3d);
+
+color:#fff;
+
+overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#ff4d94,#6c63ff);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+/* ===========================
+Loader
+=========================== */
+
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:#050816;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:99999;
+
+}
+
+.loader-heart{
+
+font-size:70px;
+
+animation:heart 1s infinite;
+
+}
+
+@keyframes heart{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ===========================
+Background Stars
+=========================== */
+
+#stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+top:0;
+
+left:0;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:35px 35px;
+
+opacity:.3;
+
+z-index:-10;
+
+animation:stars 80s linear infinite;
+
+}
+
+@keyframes stars{
+
+100%{
+
+transform:translateY(-2000px);
+
+}
+
+}
+
+/* ===========================
+Header
+=========================== */
+
+header{
+
+position:fixed;
+
+width:100%;
+
+top:0;
+
+left:0;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+color:var(--primary);
+
+}
+
+nav{
+
+display:flex;
+
+gap:30px;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:17px;
+
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:var(--primary);
+
+}
+
+/* ===========================
+Hero
+=========================== */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:0 20px;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+font-weight:800;
+
+line-height:1.2;
+
+}
+
+.hero h3{
+
+font-size:24px;
+
+color:#4fd1ff;
+
+letter-spacing:2px;
+
+}
+
+.hero p{
+
+margin-top:25px;
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#ddd;
+
+}
+
+.hero-buttons{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.hero button{
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:linear-gradient(45deg,#ff4d94,#6c63ff);
+
+color:white;
+
+transition:.4s;
+
+}
+
+.hero button:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 40px rgba(255,77,148,.5);
+
+}
+/*=========================================
+      MEET THE TRIO SECTION
+=========================================*/
+
+#about{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:55px;
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    font-size:18px;
+    color:#ccc;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.friends-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:40px;
+}
+
+.friend-card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    transition:.5s;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.friend-card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 20px 50px rgba(255,77,148,.35);
+}
+
+.friend-card img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--primary);
+    transition:.5s;
+}
+
+.friend-card:hover img{
+    transform:scale(1.08) rotate(3deg);
+}
+
+.friend-card h3{
+    margin-top:25px;
+    font-size:30px;
+}
+
+.friend-card span{
+    color:#ffb3d9;
+    font-size:17px;
+}
+
+/*=========================================
+          STORY SECTION
+=========================================*/
+
+#story{
+    padding:120px 8%;
+}
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+}
+
+.timeline-card{
+    background:rgba(255,255,255,.06);
+    border-left:5px solid var(--primary);
+    padding:35px;
+    border-radius:20px;
+    transition:.5s;
+}
+
+.timeline-card:hover{
+    transform:translateX(10px);
+    background:rgba(255,255,255,.1);
+}
+
+.timeline-card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+    font-size:30px;
+}
+
+.timeline-card p{
+    color:#ddd;
+    line-height:1.9;
+}
+
+/*=========================================
+           GALLERY
+=========================================*/
+
+#gallery{
+    padding:120px 8%;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.15);
+}
+
+.gallery-text{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.gallery-text h3{
+    font-size:22px;
+}
+
+/*=========================================
+          VIDEO SECTION
+=========================================*/
+
+#videos{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.video-container{
+    margin-top:50px;
+}
+
+.video-container video{
+    width:100%;
+    max-width:900px;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+/*=========================================
+         LETTER SECTION
+=========================================*/
+
+#letter{
+    padding:120px 8%;
+}
+
+.letter-box{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+    padding:50px;
+    border-radius:30px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.letter-box h2{
+    font-size:45px;
+    color:var(--primary);
+    margin-bottom:25px;
+}
+
+.letter-box p{
+    font-size:20px;
+    line-height:2;
+    color:#ddd;
+}
+
+/*=========================================
+       FRIENDSHIP COUNTER
+=========================================*/
+
+#counter{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.counter-box{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.counter-box div{
+    width:180px;
+    padding:35px;
+    background:rgba(255,255,255,.08);
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+}
+
+.counter-box h1{
+    font-size:55px;
+    color:var(--primary);
+}
+
+.counter-box span{
+    font-size:18px;
+    color:#ddd;
+}
+/*=========================================
+      JOURNEY SECTION
+=========================================*/
+
+#journey{
+    padding:120px 8%;
+    background:linear-gradient(180deg,#091122,#0d1630);
+}
+
+.journey-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:60px;
+}
+
+.journey-card{
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:35px;
+    transition:.5s;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.journey-card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 20px 50px rgba(108,99,255,.4);
+}
+
+.year{
+    width:100px;
+    padding:10px;
+    text-align:center;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff4d94,#6c63ff);
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.journey-card h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.journey-card p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+/*=========================================
+        SURPRISE SECTION
+=========================================*/
+
+#surprise{
+    padding:120px 8%;
+    text-align:center;
+}
+
+.surprise-box{
+    max-width:900px;
+    margin:auto;
+    padding:60px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+}
+
+.surprise-box h1{
+    font-size:55px;
+    margin-bottom:25px;
+    color:#ff4d94;
+}
+
+.surprise-box p{
+    line-height:2;
+    font-size:20px;
+    color:#ddd;
+}
+
+#surpriseBtn{
+    margin-top:40px;
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ff4d94,#6c63ff);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#surpriseBtn:hover{
+    transform:scale(1.08);
+}
+
+/*=========================================
+      FINAL MESSAGE
+=========================================*/
+
+#final-message{
+    padding:120px 8%;
+}
+
+.glass-card{
+    max-width:950px;
+    margin:auto;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(25px);
+    border-radius:35px;
+    padding:60px;
+    text-align:center;
+}
+
+.glass-card h1{
+    font-size:60px;
+    color:#ff4d94;
+    margin-bottom:30px;
+}
+
+.glass-card p{
+    font-size:20px;
+    line-height:2;
+    color:#ddd;
+}
+
+/*=========================================
+          FOOTER
+=========================================*/
+
+footer{
+    padding:70px 20px;
+    text-align:center;
+    background:#050816;
+}
+
+footer h2{
+    font-size:40px;
+    color:#ff4d94;
+}
+
+footer p{
+    margin-top:20px;
+    color:#bbb;
+    line-height:1.8;
+}
+
+.socials{
+    margin-top:30px;
+}
+
+.socials a{
+    width:55px;
+    height:55px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    margin:10px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    text-decoration:none;
+    transition:.4s;
+    font-size:22px;
+}
+
+.socials a:hover{
+    background:#ff4d94;
+    transform:translateY(-8px);
+}
+
+/*=========================================
+       FLOATING HEARTS
+=========================================*/
+
+#floating-hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d94;
+    animation:floatHeart 10s linear infinite;
+}
+
+@keyframes floatHeart{
+
+0%{
+transform:translateY(100vh) scale(.5);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+
+}
+
+/*=========================================
+       GLOW EFFECT
+=========================================*/
+
+.glow{
+
+box-shadow:
+0 0 20px rgba(255,77,148,.4),
+0 0 40px rgba(255,77,148,.3);
+
+}
+
+/*=========================================
+     BUTTON HOVER EFFECT
+=========================================*/
+
+button{
+
+transition:.4s;
+
+}
+
+button:hover{
+
+letter-spacing:1px;
+
+}
+
+/*=========================================
+      IMAGE SHADOW
+=========================================*/
+
+img{
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+} 
+/*=========================================
+      SHOOTING STARS
+=========================================*/
+
+.shooting-star{
+    position:fixed;
+    top:-100px;
+    width:3px;
+    height:120px;
+    background:linear-gradient(white,transparent);
+    transform:rotate(45deg);
+    opacity:.8;
+    animation:shoot 6s linear infinite;
+    z-index:-2;
+}
+
+@keyframes shoot{
+
+0%{
+transform:translate(-200px,-200px) rotate(45deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translate(1800px,1200px) rotate(45deg);
+opacity:0;
+}
+
+}
+
+/*=========================================
+      FIREWORKS
+=========================================*/
+
+#fireworks{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+/*=========================================
+      CONFETTI
+=========================================*/
+
+#confetti{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9998;
+
+}
+
+/*=========================================
+      MUSIC BUTTON
+=========================================*/
+
+.music-btn{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(45deg,#ff4d94,#6c63ff);
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 10px 30px rgba(255,77,148,.4);
+
+}
+
+.music-btn:hover{
+
+transform:rotate(360deg) scale(1.1);
+
+}
+
+.music-btn i{
+
+font-size:22px;
+
+color:white;
+
+}
+
+/*=========================================
+      SCROLL ANIMATION
+=========================================*/
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+.fade-up.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/*=========================================
+      GLASS EFFECT
+=========================================*/
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:25px;
+
+}
+
+/*=========================================
+      SECTION SPACING
+=========================================*/
+
+section{
+
+position:relative;
+
+}
+
+/*=========================================
+      SELECTION COLOR
+=========================================*/
+
+::selection{
+
+background:#ff4d94;
+
+color:white;
+
+}
+
+/*=========================================
+      RESPONSIVE
+=========================================*/
+
+@media(max-width:991px){
+
+header{
+
+padding:18px 5%;
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.section-title h2{
+
+font-size:40px;
+
+}
+
+.friend-card img{
+
+width:180px;
+
+height:180px;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.counter-box{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+nav{
+
+display:none;
+
+}
+
+.hero{
+
+padding-top:100px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero h3{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title h2{
+
+font-size:34px;
+
+}
+
+.friend-card{
+
+padding:25px;
+
+}
+
+.timeline-card{
+
+padding:25px;
+
+}
+
+.letter-box{
+
+padding:30px;
+
+}
+
+.glass-card{
+
+padding:35px;
+
+}
+
+footer h2{
+
+font-size:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:32px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.hero button{
+
+width:100%;
+
+}
+
+.friend-card img{
+
+width:150px;
+
+height:150px;
+
+}
+
+.gallery-item img{
+
+height:250px;
+
+}
+
+.counter-box div{
+
+width:100%;
+
+}
+
+}
+
+/*=========================================
+      END OF STYLE.CSS
+=========================================*/
