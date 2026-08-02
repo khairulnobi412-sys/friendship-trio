@@ -120,16 +120,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ------------------------------------------
-  // OPEN STORY BUTTON
-  // ------------------------------------------
+// NEXT / PREVIOUS BUTTONS
+// ------------------------------------------
 
-  document
-    .querySelectorAll("[data-next-slide]")
-    .forEach(button => {
+const nextButton = document.getElementById("next");
+const prevButton = document.getElementById("prev");
 
-      button.addEventListener("click", nextSlide);
+if (nextButton) {
+  nextButton.addEventListener("click", nextSlide);
+}
 
-    });
+if (prevButton) {
+  prevButton.addEventListener("click", previousSlide);
+}
+
+// Enter Our Story button
+document
+  .querySelectorAll("[data-next], [data-next-slide]")
+  .forEach(button => {
+    button.addEventListener("click", nextSlide);
+});
 
   // ------------------------------------------
   // REPLAY BUTTON
