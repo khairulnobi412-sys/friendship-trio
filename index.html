@@ -1,828 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Our Forever Trio ❤️ | Happy Friendship Day</title>
-
-<link rel="stylesheet" href="style.css">
-
+<title>Forever Trio ❤️ | Our Story</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ========================= -->
-<!-- Loading Screen -->
-<!-- ========================= -->
+<div id="loader"><div class="loader-heart">❤️</div><p>Loading our story...</p></div>
 
-<div id="loader">
-
-<div class="loader-heart">
-
-❤️
-
-</div>
-
-<h1>
-
-Loading Our Beautiful Memories...
-
-</h1>
-
-</div>
-
-<!-- ========================= -->
-<!-- Animated Background -->
-<!-- ========================= -->
-
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
 <div id="stars"></div>
-
-<div id="moon"></div>
-
 <div id="hearts"></div>
 
-<div id="particles"></div>
-
-<!-- ========================= -->
-<!-- Navigation -->
-<!-- ========================= -->
-
-<header>
-
-<div class="logo">
-
-❤️ Forever Trio
-
-</div>
-
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#story">Story</a>
-
-<a href="#gallery">Gallery</a>
-
-<a href="#letter">Letter</a>
-
-<a href="#ending">Ending</a>
-
-</nav>
-
-<div class="music-btn">
-
-<i class="fa-solid fa-music"></i>
-
-</div>
-
+<header class="topbar">
+  <div class="brand">❤️ <span>Forever Trio</span></div>
+  <div class="top-actions">
+    <button id="musicBtn" class="icon-btn" aria-label="Toggle music">♫</button>
+    <button id="menuBtn" class="icon-btn mobile-only" aria-label="Open navigation">☰</button>
+  </div>
 </header>
 
-<!-- ========================= -->
-<!-- Hero Section -->
-<!-- ========================= -->
+<div class="progress"><span id="progressBar"></span></div>
 
-<section id="home" class="hero">
+<nav id="slideNav" class="slide-nav" aria-label="Slide navigation">
+  <button data-slide="0">Welcome</button>
+  <button data-slide="1">Our Story</button>
+  <button data-slide="2">The Trio</button>
+  <button data-slide="3">Memories</button>
+  <button data-slide="4">Moments</button>
+  <button data-slide="5">Quotes</button>
+  <button data-slide="6">Forever</button>
+</nav>
 
-<div class="overlay"></div>
+<main id="presentation">
 
-<div class="hero-content" data-aos="zoom-in">
-
-<h3>
-
-Happy Friendship Day
-
-</h3>
-
-<h1>
-
-Three Hearts ❤️
-
-One Soul ❤️
-
-Forever Together
-
-</h1>
-
-<p>
-
-Some people come into our lives for a reason.
-
-Some stay for a season.
-
-But true friends become family forever.
-
-</p>
-
-<div class="hero-buttons">
-
-<button id="journeyBtn">
-
-Start Our Journey
-
-</button>
-
-<button id="musicBtn">
-
-Play Music
-
-</button>
-
-</div>
-
-</div>
-
-<div class="scroll-down">
-
-<i class="fa-solid fa-angles-down"></i>
-
-</div>
-
+<section class="slide active" data-title="Welcome">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">A STORY OF THREE FRIENDS</p>
+      <h1>Friendship<br><em>Trio</em></h1>
+      <p class="lead">Three hearts. Different personalities. One unforgettable bond.</p>
+      <div class="hero-actions">
+        <button class="primary" data-next>Enter Our Story <span>→</span></button>
+        <button class="ghost" id="heroMusic">Play Music</button>
+      </div>
+    </div>
+    <div class="hero-orbit">
+      <div class="orbit orbit-a"></div>
+      <div class="orbit orbit-b"></div>
+      <div class="hero-photo">
+        <img src="images/trio1.jpg" alt="Friendship Trio" onerror="this.style.display='none'; this.parentElement.classList.add('photo-fallback')">
+        <span>❤️</span>
+      </div>
+      <div class="floating-tag tag-one">TRUST</div>
+      <div class="floating-tag tag-two">MEMORIES</div>
+      <div class="floating-tag tag-three">FOREVER</div>
+    </div>
+  </div>
+  <div class="slide-meta"><span>01</span><span>SCROLL / SWIPE / ARROW</span></div>
 </section>
 
-<!-- ========================= -->
-<!-- Trio Section -->
-<!-- ========================= -->
-
-<section id="about">
-
-<div class="section-title">
-
-<h2>
-
-Meet The Forever Trio ❤️
-
-</h2>
-
-<p>
-
-Three Different Personalities.
-
-One Unbreakable Bond.
-
-</p>
-
-</div>
-
-<div class="friends-container">
-
-<div class="friend-card">
-
-<img src="images/trio1.jpg">
-
-<h3>
-
-Khairul
-
-</h3>
-
-<span>
-
-The Dreamer
-
-</span>
-
-</div>
-
-<div class="friend-card">
-
-<img src="images/trio2.jpg">
-
-<h3>
-
-Friend Two
-
-</h3>
-
-<span>
-
-The Fun Maker
-
-</span>
-
-</div>
-
-<div class="friend-card">
-
-<img src="images/trio3.jpg">
-
-<h3>
-
-Friend Three
-
-</h3>
-
-<span>
-
-The Supporter
-
-</span>
-
-</div>
-
-</div>
-
+<section class="slide" data-title="Our Story">
+  <div class="section-head">
+    <p class="eyebrow">02 / THE BEGINNING</p>
+    <h2>Every friendship has a beginning.<br><em>Ours became unforgettable.</em></h2>
+  </div>
+  <div class="timeline">
+    <article class="timeline-item">
+      <span class="year">01</span>
+      <div><h3>First Meeting</h3><p>Write how all three of you met.</p></div>
+    </article>
+    <article class="timeline-item">
+      <span class="year">02</span>
+      <div><h3>Craziest Day</h3><p>Add your funniest memory.</p></div>
+    </article>
+    <article class="timeline-item">
+      <span class="year">03</span>
+      <div><h3>Best Moment</h3><p>Describe your favorite memory together.</p></div>
+    </article>
+    <article class="timeline-item">
+      <span class="year">04</span>
+      <div><h3>Future Promise</h3><p>No matter where life takes us, we'll always stay together.</p></div>
+    </article>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Our Story -->
-<!-- ========================= -->
-
-<section id="story">
-
-<div class="section-title">
-
-<h2>
-
-Our Story
-
-</h2>
-
-<p>
-
-Every friendship has a beginning...
-
-Ours became unforgettable.
-
-</p>
-
-</div>
-
-<div class="timeline">
-
-<div class="timeline-card">
-
-<h3>
-
-📍 First Meeting
-
-</h3>
-
-<p>
-
-Write how all three of you met.
-
-</p>
-
-</div>
-
-<div class="timeline-card">
-
-<h3>
-
-😂 Craziest Day
-
-</h3>
-
-<p>
-
-Add your funniest memory.
-
-</p>
-
-</div>
-
-<div class="timeline-card">
-
-<h3>
-
-❤️ Best Moment
-
-</h3>
-
-<p>
-
-Describe your favorite memory together.
-
-</p>
-
-</div>
-
-<div class="timeline-card">
-
-<h3>
-
-🚀 Future Promise
-
-</h3>
-
-<p>
-
-No matter where life takes us...
-
-We'll always stay together.
-
-</p>
-
-</div>
-
-</div>
-
+<section class="slide" data-title="The Trio">
+  <div class="section-head center">
+    <p class="eyebrow">03 / THREE SOULS</p>
+    <h2>Meet the <em>Forever Trio</em></h2>
+    <p>Three different personalities. One unbreakable bond.</p>
+  </div>
+  <div class="trio-grid">
+    <article class="person-card">
+      <div class="person-image"><img src="images/trio1.jpg" alt="Khairul" onerror="this.style.display='none'"><span>KN</span></div>
+      <div><span class="role">THE DREAMER</span><h3>Khairul</h3><p>Always dreaming bigger and collecting moments worth remembering.</p></div>
+    </article>
+    <article class="person-card">
+      <div class="person-image"><span>02</span></div>
+      <div><span class="role">THE FUN MAKER</span><h3>Friend Two</h3><p>The one who turns ordinary days into stories we keep talking about.</p></div>
+    </article>
+    <article class="person-card">
+      <div class="person-image"><span>03</span></div>
+      <div><span class="role">THE SUPPORTER</span><h3>Friend Three</h3><p>The calm presence who is there when it matters most.</p></div>
+    </article>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Premium Memory Gallery -->
-<!-- ========================= -->
-
-<section id="gallery">
-
-<div class="section-title">
-
-<h2>
-
-Our Beautiful Memories 📸
-
-</h2>
-
-<p>
-
-Every picture tells a story...
-
-Every smile hides a thousand memories.
-
-</p>
-
-</div>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="images/memory1.jpg" alt="">
-<div class="gallery-text">
-<h3>First Selfie</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory2.jpg" alt="">
-<div class="gallery-text">
-<h3>Best Trip</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory3.jpg" alt="">
-<div class="gallery-text">
-<h3>Crazy Day</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory4.jpg" alt="">
-<div class="gallery-text">
-<h3>Festival Time</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory5.jpg" alt="">
-<div class="gallery-text">
-<h3>Unforgettable Moment</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory6.jpg" alt="">
-<div class="gallery-text">
-<h3>Forever Together</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory7.jpg" alt="">
-<div class="gallery-text">
-<h3>Laughing Together</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory8.jpg" alt="">
-<div class="gallery-text">
-<h3>Happy Days</h3>
-</div>
-</div>
-
-<div class="gallery-item">
-<img src="images/memory9.jpg" alt="">
-<div class="gallery-text">
-<h3>Friendship Forever</h3>
-</div>
-</div>
-
-</div>
-
+<section class="slide" data-title="Memories">
+  <div class="section-head">
+    <p class="eyebrow">04 / LITTLE MOMENTS</p>
+    <h2>Memories that <em>stay forever.</em></h2>
+  </div>
+  <div class="memory-grid">
+    <figure><img src="images/memory1.jpg" alt="First Selfie" onerror="this.closest('figure').classList.add('missing')"><figcaption>First Selfie</figcaption></figure>
+    <figure><img src="images/memory2.jpg" alt="Best Trip" onerror="this.closest('figure').classList.add('missing')"><figcaption>Best Trip</figcaption></figure>
+    <figure><img src="images/memory3.jpg" alt="Crazy Day" onerror="this.closest('figure').classList.add('missing')"><figcaption>Crazy Day</figcaption></figure>
+    <figure><img src="images/memory4.jpg" alt="Festival Time" onerror="this.closest('figure').classList.add('missing')"><figcaption>Festival Time</figcaption></figure>
+    <figure><img src="images/memory5.jpg" alt="Unforgettable Moment" onerror="this.closest('figure').classList.add('missing')"><figcaption>Unforgettable Moment</figcaption></figure>
+    <figure><img src="images/memory6.jpg" alt="Forever Together" onerror="this.closest('figure').classList.add('missing')"><figcaption>Forever Together</figcaption></figure>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Video Memories -->
-<!-- ========================= -->
-
-<section id="videos">
-
-<div class="section-title">
-
-<h2>
-
-Video Memories 🎥
-
-</h2>
-
-<p>
-
-Relive every beautiful moment.
-
-</p>
-
-</div>
-
-<div class="video-container">
-
-<video controls poster="images/poster.jpg">
-
-<source src="videos/memory.mp4" type="video/mp4">
-
-</video>
-
-</div>
-
+<section class="slide" data-title="Moments">
+  <div class="section-head center">
+    <p class="eyebrow">05 / SPECIAL MOMENTS</p>
+    <h2>The moments we <em>never forget.</em></h2>
+  </div>
+  <div class="moment-layout">
+    <div class="moment-cards">
+      <article class="glass-card"><span>01</span><h3>😂 The Crazy Days</h3><p>Add the date and story of your funniest day together.</p></article>
+      <article class="glass-card"><span>02</span><h3>❤️ The Best Memory</h3><p>Add a special event or moment that means the most.</p></article>
+      <article class="glass-card"><span>03</span><h3>🚀 The Next Chapter</h3><p>More places, more laughter, more memories together.</p></article>
+    </div>
+    <div class="video-card">
+      <video controls poster="images/poster.jpg">
+        <source src="videos/memory.mp4" type="video/mp4">
+      </video>
+      <p>Relive every beautiful moment.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Friendship Letter -->
-<!-- ========================= -->
-
-<section id="letter">
-
-<div class="letter-box">
-
-<h2>
-
-A Letter To My Best Friends ❤️
-
-</h2>
-
-<p id="typingText">
-
-Dear Brothers...
-
-Thank you for staying beside me in every situation.
-
-Thank you for making every ordinary day extraordinary.
-
-Our friendship isn't measured by years.
-
-It's measured by trust,
-
-respect,
-
-love,
-
-crazy memories,
-
-and countless smiles.
-
-No matter what happens in life...
-
-Promise me we'll never stop making memories together.
-
-Happy Friendship Day ❤️
-
-</p>
-
-</div>
-
+<section class="slide quote-slide" data-title="Quotes">
+  <div class="quote-mark">“</div>
+  <div class="quote-wrap">
+    <p class="eyebrow">06 / OUR WORDS</p>
+    <blockquote id="quoteText">Some people come into our lives for a reason. Some stay for a season. True friends become family.</blockquote>
+    <div class="quote-dots"><span class="active"></span><span></span><span></span></div>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Friendship Counter -->
-<!-- ========================= -->
-
-<section id="counter">
-
-<h2>
-
-Our Friendship Journey ⏳
-
-</h2>
-
-<div class="counter-box">
-
-<div>
-
-<h1 id="years">
-
-00
-
-</h1>
-
-<span>Years</span>
-
-</div>
-
-<div>
-
-<h1 id="months">
-
-00
-
-</h1>
-
-<span>Months</span>
-
-</div>
-
-<div>
-
-<h1 id="days">
-
-00
-
-</h1>
-
-<span>Days</span>
-
-</div>
-
-</div>
-
+<section class="slide final-slide" data-title="Forever">
+  <div class="final-glow"></div>
+  <div class="final-content">
+    <p class="eyebrow">07 / UNTIL FOREVER</p>
+    <h2>Some friendships are temporary.<br><em>Ours is forever.</em></h2>
+    <p class="final-text">Thank you for every smile, every crazy memory, every ordinary day made extraordinary.</p>
+    <div class="final-heart">❤️</div>
+    <h3>Forever Trio</h3>
+    <button class="primary" id="replay">↻ Replay Our Story</button>
+  </div>
 </section>
 
-<!-- ========================= -->
-<!-- Music Player -->
-<!-- ========================= -->
+</main>
+
+<div class="slide-controls">
+  <button id="prev" aria-label="Previous slide">←</button>
+  <div><span id="currentSlide">01</span><i></i><span>07</span></div>
+  <button id="next" aria-label="Next slide">→</button>
+</div>
+
+<div class="swipe-hint">Swipe or use ← →</div>
 
 <audio id="bgMusic" loop>
-
-<source src="music/song.mp3" type="audio/mp3">
-
+  <source src="music/friendship.mp3" type="audio/mpeg">
 </audio>
 
-<div id="musicControl">
-
-<i class="fa-solid fa-play"></i>
-
-</div>
-
-<!-- ========================= -->
-<!-- Memories Timeline -->
-<!-- ========================= -->
-
-<section id="journey">
-
-<div class="section-title">
-
-<h2>Our Journey Together ❤️</h2>
-
-<p>
-Every year added another beautiful chapter to our friendship.
-</p>
-
-</div>
-
-<div class="journey-container">
-
-<div class="journey-card">
-
-<div class="year">2022</div>
-
-<h3>Our Beginning</h3>
-
-<p>
-This was where everything started.
-Three strangers slowly became brothers.
-</p>
-
-</div>
-
-<div class="journey-card">
-
-<div class="year">2023</div>
-
-<h3>Unlimited Memories</h3>
-
-<p>
-Trips...
-Laughs...
-Night talks...
-Endless fun.
-</p>
-
-</div>
-
-<div class="journey-card">
-
-<div class="year">2024</div>
-
-<h3>Best Moments</h3>
-
-<p>
-No matter where life took us,
-we never stopped supporting each other.
-</p>
-
-</div>
-
-<div class="journey-card">
-
-<div class="year">2025</div>
-
-<h3>Still Together</h3>
-
-<p>
-Distance never reduced our friendship.
-It only made our bond stronger.
-</p>
-
-</div>
-
-<div class="journey-card">
-
-<div class="year">Forever</div>
-
-<h3>Promise ❤️</h3>
-
-<p>
-No matter what happens...
-We'll always remain the Forever Trio.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- Surprise Section -->
-<!-- ========================= -->
-
-<section id="surprise">
-
-<div class="surprise-box">
-
-<h1>
-A Small Surprise 🎁
-</h1>
-
-<p>
-
-Friendship isn't about
-
-who you've known the longest...
-
-It's about
-
-who entered your life
-
-and never left.
-
-</p>
-
-<button id="surpriseBtn">
-
-Open Surprise ❤️
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- Final Video -->
-<!-- ========================= -->
-
-<section id="final-video">
-
-<h2>
-Our Story In One Video 🎥
-</h2>
-
-<div class="video-wrapper">
-
-<video
-controls
-playsinline
-poster="images/video-cover.jpg">
-
-<source
-src="videos/friendship.mp4"
-type="video/mp4">
-
-</video>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- Final Message -->
-<!-- ========================= -->
-
-<section id="final-message">
-
-<div class="glass-card">
-
-<h1>
-
-Thank You ❤️
-
-</h1>
-
-<p>
-
-Thank you for every smile.
-
-Thank you for every laugh.
-
-Thank you for every crazy plan.
-
-Thank you for being my second family.
-
-If I had another life...
-
-I'd still choose you both as my best friends.
-
-Happy Friendship Day ❤️
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ========================= -->
-<!-- Fireworks -->
-<!-- ========================= -->
-
-<div id="fireworks"></div>
-
-<div id="confetti"></div>
-
-<div id="floating-hearts"></div>
-
-<!-- ========================= -->
-<!-- Footer -->
-<!-- ========================= -->
-
-<footer>
-
-<h2>
-
-Forever Trio ❤️
-
-</h2>
-
-<p>
-
-Made with ❤️ by Khairul
-
-For My Best Friends
-
-Happy Friendship Day
-
-</p>
-
-<div class="socials">
-
-<a href="#"><i class="fab fa-instagram"></i></a>
-
-<a href="#"><i class="fab fa-whatsapp"></i></a>
-
-<a href="#"><i class="fab fa-facebook"></i></a>
-
-</div>
-
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-
-AOS.init({
-
-duration:1200,
-
-once:true
-
-});
-
-</script>
-
 <script src="script.js"></script>
-
 </body>
-
 </html>
