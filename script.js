@@ -4,7 +4,20 @@
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Remove old loading screen
+  const loader = document.getElementById("loader");
 
+  if (loader) {
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.pointerEvents = "none";
+
+      setTimeout(() => {
+        loader.remove();
+      }, 500);
+
+    }, 700);
+  }
   const shell = document.getElementById("cuteSlideShell");
   const slides = shell
     ? [...shell.querySelectorAll(".cute-slide")]
