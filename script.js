@@ -1,88 +1,301 @@
-const slides=[...document.querySelectorAll(".slide")];
-const navButtons=[...document.querySelectorAll(".slide-nav button")];
-const currentEl=document.getElementById("currentSlide");
-const progress=document.getElementById("progressBar");
-let current=0, animating=false, musicOn=false;
+// ==========================================
+// FRIENDSHIP TRIO — PREMIUM SLIDE CONTROLLER
+// Fafa • Khai • Bappy
+// ==========================================
 
-function showSlide(index,direction=1){
-  if(animating || index===current || index<0 || index>=slides.length)return;
-  animating=true;
-  const old=slides[current], next=slides[index];
-  old.classList.remove("active");
-  if(direction<0) old.classList.add("exit-left");
-  next.classList.remove("exit-left");
-  next.classList.add("active");
-  current=index;
-  currentEl.textContent=String(current+1).padStart(2,"0");
-  progress.style.width=((current+1)/slides.length*100)+"%";
-  navButtons.forEach((b,i)=>b.classList.toggle("active",i===current));
-  setTimeout(()=>{old.classList.remove("exit-left");animating=false},750);
-}
-function next(){showSlide(Math.min(current+1,slides.length-1),1)}
-function prev(){showSlide(Math.max(current-1,0),-1)}
+document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("next").onclick=next;
-document.getElementById("prev").onclick=prev;
-document.querySelectorAll("[data-next]").forEach(b=>b.onclick=next);
-navButtons.forEach(b=>b.onclick=()=>showSlide(Number(b.dataset.slide),Number(b.dataset.slide)>current?1:-1));
-document.getElementById("replay").onclick=()=>showSlide(0,-1);
+  const shell = document.getElementById("cuteSlideShell");
+  const slides = shell
+    ? [...shell.querySelectorAll(".cute-slide")]
+    : [];
 
-window.addEventListener("keydown",e=>{
-  if(["ArrowRight"," ","PageDown"].includes(e.key)){e.preventDefault();next()}
-  if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();prev()}
-  if(e.key==="Home")showSlide(0,-1);
-  if(e.key==="End")showSlide(slides.length-1,1);
-  if(/^[1-7]$/.test(e.key))showSlide(Number(e.key)-1,Number(e.key)-1>current?1:-1);
-});
+  const navButtons = [
+    ...document.querySelectorAll("#cuteSlideNav button")
+  ];
 
-let touchX=0;
-window.addEventListener("touchstart",e=>touchX=e.changedTouches[0].screenX,{passive:true});
-window.addEventListener("touchend",e=>{
-  const dx=e.changedTouches[0].screenX-touchX;
-  if(Math.abs(dx)>50) dx<0?next():prev();
-},{passive:true});
+  const progress = document.querySelector(
+    "#cuteSlideProgress span"
+  );
 
-function makeHeart(){
-  const h=document.createElement("span");
-  h.className="heart-float";h.textContent=Math.random()>.25?"❤️":"✦";
-  h.style.left=Math.random()*100+"vw";
-  h.style.fontSize=(10+Math.random()*15)+"px";
-  document.getElementById("hearts").appendChild(h);
-  setTimeout(()=>h.remove(),6000);
-}
-setInterval(makeHeart,1100);
+  const counter = document.getElementById("cuteSlideCounter");
 
-const quotes=[
-"Some people come into our lives for a reason. Some stay for a season. True friends become family.",
-"Three different personalities. One unbreakable bond. A thousand memories still waiting to happen.",
-"No matter where life takes us, the best memories will always have the three of us in them."
-];
-let qi=0;
-setInterval(()=>{
-  qi=(qi+1)%quotes.length;
-  const q=document.getElementById("quoteText");
-  q.style.opacity=0;
-  setTimeout(()=>{q.textContent=quotes[qi];q.style.opacity=1;document.querySelectorAll(".quote-dots span").forEach((d,i)=>d.classList.toggle("active",i===qi))},300);
-},5000);
+  let current = 0;
+  let animating = false;
 
-const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicBtn");
-const heroMusic=document.getElementById("heroMusic");
-function toggleMusic(){
-  if(!music)return;
-  if(musicOn){music.pause();musicOn=false;musicBtn.textContent="♫";heroMusic.textContent="Play Music"}
-  else{music.play().then(()=>{musicOn=true;musicBtn.textContent="Ⅱ";heroMusic.textContent="Pause Music"}).catch(()=>{heroMusic.textContent="Add music file first"})}
-}
-musicBtn.onclick=toggleMusic; heroMusic.onclick=toggleMusic;
+  // ------------------------------------------
+  // SHOW SLIDE
+  // ------------------------------------------
 
-document.getElementById("menuBtn")?.addEventListener("click",()=>{
-  document.getElementById("slideNav").style.display =
-  getComputedStyle(document.getElementById("slideNav")).display==="none" ? "flex":"none";
-});
+  function showSlide(index) {
 
-window.addEventListener("load",()=>{
-  setTimeout(()=>document.getElementById("loader").style.opacity="0",500);
-  setTimeout(()=>document.getElementById("loader").remove(),1300);
-  navButtons[0].classList.add("active");
-  progress.style.width=(100/slides.length)+"%";
+    if (!slides.length) return;
+
+    if (
+      animating ||
+      index < 0 ||
+      index >= slides.length ||
+      index === current
+    ) {
+      return;
+    }
+
+    animating = true;
+
+    const oldSlide = slides[current];
+    const newSlide = slides[index];
+
+    oldSlide.classList.remove("is-active");
+
+    newSlide.classList.add("is-active");
+
+    current = index;
+
+    // Counter
+    if (counter) {
+      counter.textContent =
+        String(current + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+    }
+
+    // Progress bar
+    if (progress) {
+      progress.style.width =
+        ((current + 1) / slides.length * 100) + "%";
+    }
+
+    // Navigation buttons
+    navButtons.forEach((button, i) => {
+      button.classList.toggle(
+        "active",
+        i === current
+      );
+    });
+
+    setTimeout(() => {
+      animating = false;
+    }, 650);
+  }
+
+  // ------------------------------------------
+  // NEXT / PREVIOUS
+  // ------------------------------------------
+
+  function nextSlide() {
+    if (current < slides.length - 1) {
+      showSlide(current + 1);
+    }
+  }
+
+  function previousSlide() {
+    if (current > 0) {
+      showSlide(current - 1);
+    }
+  }
+
+  // ------------------------------------------
+  // NAVIGATION BUTTONS
+  // ------------------------------------------
+
+  navButtons.forEach((button, index) => {
+
+    button.addEventListener("click", () => {
+      showSlide(index);
+    });
+
+  });
+
+  // ------------------------------------------
+  // OPEN STORY BUTTON
+  // ------------------------------------------
+
+  document
+    .querySelectorAll("[data-next-slide]")
+    .forEach(button => {
+
+      button.addEventListener("click", nextSlide);
+
+    });
+
+  // ------------------------------------------
+  // REPLAY BUTTON
+  // ------------------------------------------
+
+  document
+    .querySelectorAll("[data-replay]")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        if (current === 0) return;
+
+        slides[current].classList.remove("is-active");
+
+        current = 0;
+
+        slides[0].classList.add("is-active");
+
+        updateUI();
+
+      });
+
+    });
+
+  // ------------------------------------------
+  // UPDATE UI
+  // ------------------------------------------
+
+  function updateUI() {
+
+    if (counter) {
+
+      counter.textContent =
+        String(current + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+
+    }
+
+    if (progress) {
+
+      progress.style.width =
+        ((current + 1) / slides.length * 100) + "%";
+
+    }
+
+    navButtons.forEach((button, index) => {
+
+      button.classList.toggle(
+        "active",
+        index === current
+      );
+
+    });
+
+  }
+
+  // ------------------------------------------
+  // KEYBOARD CONTROL
+  // ------------------------------------------
+
+  window.addEventListener("keydown", event => {
+
+    if (
+      event.key === "ArrowRight" ||
+      event.key === " " ||
+      event.key === "PageDown"
+    ) {
+
+      event.preventDefault();
+      nextSlide();
+
+    }
+
+    if (
+      event.key === "ArrowLeft" ||
+      event.key === "PageUp"
+    ) {
+
+      event.preventDefault();
+      previousSlide();
+
+    }
+
+    // Home
+    if (event.key === "Home") {
+
+      slides[current]?.classList.remove("is-active");
+
+      current = 0;
+
+      slides[0]?.classList.add("is-active");
+
+      updateUI();
+
+    }
+
+    // End
+    if (event.key === "End") {
+
+      slides[current]?.classList.remove("is-active");
+
+      current = slides.length - 1;
+
+      slides[current]?.classList.add("is-active");
+
+      updateUI();
+
+    }
+
+    // Number keys 1–7
+    if (/^[1-7]$/.test(event.key)) {
+
+      const number = Number(event.key) - 1;
+
+      if (number < slides.length) {
+        showSlide(number);
+      }
+
+    }
+
+  });
+
+  // ------------------------------------------
+  // MOBILE SWIPE
+  // ------------------------------------------
+
+  let touchStartX = 0;
+
+  window.addEventListener(
+    "touchstart",
+    event => {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "touchend",
+    event => {
+
+      const touchEndX =
+        event.changedTouches[0].screenX;
+
+      const difference =
+        touchEndX - touchStartX;
+
+      if (Math.abs(difference) < 50) return;
+
+      if (difference < 0) {
+        nextSlide();
+      } else {
+        previousSlide();
+      }
+
+    },
+    { passive: true }
+  );
+
+  // ------------------------------------------
+  // INITIALIZE
+  // ------------------------------------------
+
+  if (slides.length) {
+
+    slides.forEach(slide => {
+      slide.classList.remove("is-active");
+    });
+
+    slides[0].classList.add("is-active");
+
+    current = 0;
+
+    updateUI();
+
+  }
+
 });
